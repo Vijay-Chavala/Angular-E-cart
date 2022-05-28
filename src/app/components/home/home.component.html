@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <div class="categories d-flex justify-content-around">
+    <div class="categoryItem">
+      <a (click)="categoryProducts('')">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRrwUTGVY2wQT7Z0YnG0yb8SMNhZfBqvWFmg&usqp=CAU"
+          alt=""
+        />
+        <p class="text-center">All Products</p></a
+      >
+    </div>
+    <div class="categoryItem">
+      <a (click)="categoryProducts('electronics')">
+        <img
+          src="https://rukminim2.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100"
+          alt=""
+        />
+        <p class="text-center">Electronics</p></a
+      >
+    </div>
+    <div class="categoryItem">
+      <a (click)="categoryProducts('fashion')">
+        <img
+          src="https://rukminim2.flixcart.com/flap/128/128/image/c12afc017e6f24cb.png?q=100"
+          alt=""
+        />
+        <p class="text-center">Fashion</p></a
+      >
+    </div>
+    <div class="categoryItem">
+      <a (click)="categoryProducts('jewelery')">
+        <img
+          src="https://cdn1.jewelxy.com/live/img/business_product/9IwfU60JXr_20200317130052.jpg"
+          alt=""
+        />
+        <p class="text-center">Jewellery</p></a
+      >
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="loading" *ngIf="isLoading">
+    <i class="fa fa-spinner fa-spin fa-3x"></i>
+    <h5>Loading...</h5>
+  </div>
+  <div class="products row" *ngIf="!isLoading">
+    <div
+      class="col-12 col-sm-6 col-md-6 col-lg-3"
+      *ngFor="let item of filterProducts | filter: searchKey:'title'"
+    >
+      <div class="card">
+        <div class="cardImg p-4">
+          <img class="cardImage" src="{{ item.image }}" alt="" />
+        </div>
+        <div class="cardInfo mt-3">
+          <h6>{{ item.title }}</h6>
+          <p>
+            {{ item.description }}
+          </p>
+          <h6 class="cardPrice">₹{{ item.price }}</h6>
+        </div>
+        <button
+          (click)="addToCart(item)"
+          class="btn btn-primary mb-2 addToCartBtn mt-1 w-50"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

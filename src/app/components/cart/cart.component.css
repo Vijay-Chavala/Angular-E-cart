@@ -1,0 +1,77 @@
+.emptyCartContainer {
+  background-color: #ffffffcc;
+  padding: 8px;
+  border-radius: 5px;
+}
+.emptyCartInfo {
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  overflow: hidden;
+}
+.emptyCartInfo img {
+  width: auto;
+  padding: 8px 0;
+}
+.shopNowBtn {
+  background: rgb(254, 148, 19);
+  color: white;
+  width: 180px;
+}
+.CartContainer {
+  max-width: 95%;
+}
+
+.cartItem {
+  background-color: #ffffffcc;
+  border-radius: 5px;
+}
+.cartItem img {
+  width: 100px;
+  height: fit-content;
+}
+.cartItemDesc {
+  font-size: 12px;
+}
+.cartRightInfo {
+  width: 50%;
+}
+.quantity {
+  height: 50px;
+  line-height: 50px;
+}
+.trash-btn .fa-trash {
+  background-color: #ffadad;
+  padding: 8px;
+  border-radius: 50%;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.trash-btn .fa-trash:hover {
+  background-color: #d4d4d4;
+}
+.btn-IncDec {
+  background-color: #c4e5facc;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  height: 30px;
+  width: 30px;
+  line-height: 20px;
+}
+.btn-IncDec:hover {
+  background-color: #e0a9a9;
+  cursor: pointer;
+}
+.quantityNum {
+  height: 20px;
+  line-height: 28px;
+}
+.priceDetails {
+  background-color: #ffffffcc;
+  padding: 10px 5px;
+}

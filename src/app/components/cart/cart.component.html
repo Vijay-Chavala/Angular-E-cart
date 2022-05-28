@@ -1,0 +1,95 @@
+<ng-container *ngIf="cartItems.length; then cartBlock; else emptyBlock">
+</ng-container>
+<ng-template #emptyBlock>
+  <div class="mt-5 emptyCartContainer container">
+    <h5 class="ms-3 mt-3">My Cart</h5>
+    <div class="emptyCartInfo">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfxJNtS6FKQZvCoSmbGELKBbhTs-74que049Uadoe-xQCKf75J2hGIkIpqUwlvdEgiDb8&usqp=CAU"
+        alt=""
+      />
+      <h6 class="py-3">Missing Cart items</h6>
+      <button class="btn shopNowBtn" routerLink="/products">Shop Now</button>
+    </div>
+  </div>
+</ng-template>
+<ng-template #cartBlock>
+  <div class="CartContainer container mt-4">
+    <div class="mb-2">
+      <h5>
+        My Cart <span>({{ cartItems.length }})</span>
+      </h5>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-sm-12 h-100">
+        <div
+          class="cartItem col-12 d-flex shadow mt-2"
+          *ngFor="let item of cartItems"
+        >
+          <div class="d-flex">
+            <img src="{{ item.image }}" alt="" class="m-3" />
+            <div class="w-50">
+              <h6 class="mt-3">{{ item.title }}</h6>
+              <p class="cartItemDesc">
+                {{ item.description }}
+              </p>
+              <p class="mt-5">${{ item.price }}</p>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column align-items-end justify-content-between cartRightInfo m-3"
+          >
+            <div (click)="removeItem(item)" class="trash-btn">
+              <i class="fa fa-trash ms-5"></i>
+            </div>
+            <div class="d-flex flex-row justify-content-between w-100 quantity">
+              <p>Quantity :</p>
+              <div class="d-flex border p-2 mx-2">
+                <!-- <span class="btn-IncDec">-</span> -->
+                <p class="mx-3 quantityNum">{{ item.quantity }}</p>
+                <!-- <span class="btn-IncDec">+</span> -->
+              </div>
+              <b>${{ item.price }}</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-12 col-md-12">
+        <div class="col-12 priceDetails ms-auto mt-2 shadow">
+          <h6 class="ms-3 my-3 text-muted">PRICE DETAILS</h6>
+          <hr />
+          <div class="d-flex justify-content-between px-3">
+            <p>Price ({{ cartItems.length }})</p>
+            <p>{{ grandTotal | number: "1.2-2" }}</p>
+          </div>
+          <div class="d-flex justify-content-between px-3">
+            <p>Discount</p>
+            <p>-$8</p>
+          </div>
+
+          <div class="d-flex justify-content-between px-3">
+            <p>Delivery Charges</p>
+            <p>$5</p>
+          </div>
+
+          <hr />
+          <div class="d-flex justify-content-between px-3">
+            <b>Total Amount</b>
+            <b>$ {{ grandTotal + 5 - 8 | number: "1.2-2" }}</b>
+          </div>
+          <hr />
+
+          <div class="px-3 d-flex justify-content-between">
+            <button routerLink="" class="btn btn-warning">Shop More</button>
+            <button (click)="clearCart()" class="btn btn-danger">
+              Empty Cart
+            </button>
+            <button class="btn btn-success">Place Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,47 @@
+.form {
+  width: 60%;
+  position: relative;
+}
+.searchField {
+  padding-right: 50px;
+}
+.searchIcon,
+.searchIcon:hover {
+  position: absolute;
+  right: 15px;
+  top: 8px;
+  font-size: 20px;
+  color: rgb(0, 110, 255);
+  cursor: pointer;
+}
+.shoppingCart {
+  font-size: 15px;
+  position: relative;
+  font-weight: bold;
+}
+.shoppingCartIcon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.cartNumber {
+  position: absolute;
+  left: 18px;
+  top: 0;
+  text-align: center;
+  border-radius: 7px;
+  width: 18px;
+  height: 18px;
+  background-color: #ff6161;
+  border: 1px solid #fff;
+  font-weight: 400;
+  color: #f0f0f0;
+  line-height: 16px;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 380px) {
+  .form {
+    width: 40%;
+    position: relative;
+  }
+}

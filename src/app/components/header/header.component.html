@@ -1,0 +1,46 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" routerLink=""> E-Mart</a>
+      <form class="d-flex form">
+        <input
+          class="form-control searchField"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          [(ngModel)]="searchTerm"
+          (keyup)="search($event)"
+          name="myinput"
+        />
+        <span class="searchIcon fa fa-search"></span>
+      </form>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link active shoppingCart"
+              aria-current="page"
+              routerLink="/cart"
+              ><span class="fa fa-shopping-cart shoppingCartIcon">
+                <span class="cartNumber">{{ cartItems.length }}</span>
+              </span>
+              Cart</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

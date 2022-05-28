@@ -1,0 +1,60 @@
+.loading {
+  height: 50vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.categoryItem {
+  cursor: pointer;
+}
+.categoryItem img {
+  width: 80px;
+  margin-top: 10px;
+}
+.card {
+  color: #000000;
+  width: 100%;
+  position: relative;
+  margin-top: 60px;
+  transition: 0.6s ease-in-out;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.cardImg {
+  overflow: hidden;
+  height: 220px;
+}
+.cardImage {
+  width: 100%;
+}
+.cardInfo {
+  padding: 10px;
+}
+.cardInfo h6:first-child {
+  color: #7a7a7a;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100ch;
+  overflow: hidden;
+}
+.cardInfo p {
+  margin: 3px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100ch;
+  overflow: hidden;
+}
+.cardInfo h6:last-child {
+  color: #000000;
+  font-weight: bold;
+  margin: 0;
+}
+.addToCartBtn {
+  font-size: 14px;
+  margin-left: 10px;
+  white-space: nowrap;
+  width: 90px !important;
+  text-align: center;
+}
